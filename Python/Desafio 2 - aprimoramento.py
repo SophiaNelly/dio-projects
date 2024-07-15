@@ -19,7 +19,6 @@ def exibir_menu():
     return input().strip()
 
 
-# Função para criar uma nova conta
 def criar_nova_conta():
     numero_conta = input("Digite o número da nova conta: ").strip()
     senha = input("Digite a senha para a nova conta: ")
@@ -39,7 +38,6 @@ def criar_nova_conta():
     print(f"Conta {numero_conta} criada com sucesso!")
 
 
-# Função para acessar uma conta existente
 def acessar_conta_existente():
     numero_conta = input("Digite o número da conta: ").strip()
     senha = input("Digite a senha: ")
@@ -52,7 +50,6 @@ def acessar_conta_existente():
         return None
 
 
-# Função para realizar um depósito
 def realizar_deposito(numero_conta):
     valor_deposito = float(input("Informe o valor do depósito: "))
     if valor_deposito > 0:
@@ -63,7 +60,6 @@ def realizar_deposito(numero_conta):
         print("Operação falhou! O valor informado é inválido.")
 
 
-# Função para realizar um saque
 def realizar_saque(numero_conta):
     valor_saque = float(input("Informe o valor do saque: "))
 
@@ -86,7 +82,6 @@ def realizar_saque(numero_conta):
         print("Operação falhou! O valor informado é inválido.")
 
 
-# Função para transferir entre contas
 def realizar_transferencia(numero_conta):
     conta_destino = input("Informe o número da conta de destino: ").strip()
     if conta_destino not in contas:
@@ -112,12 +107,10 @@ def realizar_transferencia(numero_conta):
         print("Operação falhou! O valor informado é inválido.")
 
 
-# Função para consultar saldo
 def consultar_saldo(numero_conta):
     print(f"Saldo disponível: R$ {contas[numero_conta]['saldo']:.2f}")
 
 
-# Função para exibir extrato
 def exibir_extrato(numero_conta):
     print("\n=== Extrato ===")
     if not contas[numero_conta]['extrato']:
@@ -129,7 +122,6 @@ def exibir_extrato(numero_conta):
     print("===============")
 
 
-# Função principal que controla o fluxo do programa
 def main():
     while True:
         opcao = exibir_menu()
@@ -165,11 +157,10 @@ def main():
             print("Opção inválida. Por favor, escolha uma opção válida.")
 
 
-# Função para operar a conta após autenticação
 def operar_conta(numero_conta):
     print(f"Bem-vindo, conta {numero_conta}!")
 
 
-# Executar o programa principal
+
 if __name__ == "__main__":
     main()
